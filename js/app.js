@@ -1,5 +1,5 @@
 const loadProducts = () => {
-  const url = `https://fakestoreapi.com/products`;
+  const url = `../js/data.json`;
   fetch(url)
     .then((response) => response.json())
     .then((data) => showProducts(data));
@@ -19,9 +19,13 @@ const showProducts = (products) => {
       </div>
       <h3>${product.title}</h3>
       <p>Category: ${product.category}</p>
+
+      <span style="display:flex ; justify-content:center ;">
+      <p style="color:red; padding-right:15px"><i  class="far fa-star"></i> : ${product.rating.rate}</p>
+      <p><i class="fas fa-user"></i>:${product.rating.count} </p>
+      </span>
+
       <h2>Price: $ ${product.price}</h2>
-      <p>Rating : ${product.rating.rate}</p>
-      <p>Rating count:${product.rating.count} </p>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
       <button id="details-btn" class="btn btn-danger">Details</button></div>
       `;

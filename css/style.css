@@ -1,6 +1,12 @@
 body {
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
+  
+}
+.header{
+  text-align: center;
+  font-weight: 700;
+  color: orange,salmon;
 }
 .search-field {
   border: none;
